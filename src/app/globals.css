@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    @apply bg-void-bg text-void-text font-syne overflow-hidden;
+  }
+
+  /* Screen reader only content */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .time-value-3d {
+    position: relative;
+
+    &::before {
+      content: attr(data-value);
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      z-index: -1;
+      background: linear-gradient(180deg, #ff2244 0%, #ff224480 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.5;
+    }
+  }
+
+  .glitch-text {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &::before {
+      animation: glitch-1 2s infinite;
+      color: #00ffff;
+      clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+    }
+
+    &::after {
+      animation: glitch-2 2s infinite;
+      color: #ff00ff;
+      clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+    }
+  }
+
+  .shatter-text {
+    position: relative;
+
+    &::before {
+      content: 'RIEN.';
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      background: linear-gradient(135deg, #ff2244 0%, #ff4466 25%, #fafafa 50%, #00ffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      clip-path: polygon(0 0, 35% 0, 30% 35%, 65% 35%, 60% 0, 100% 0, 100% 100%, 40% 100%, 45% 65%, 10% 65%, 15% 100%, 0 100%);
+      filter: blur(8px);
+      opacity: 0.7;
+      animation: shatter-drift 4s ease-in-out infinite;
+    }
+
+    &::after {
+      content: 'RIEN.';
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ff00ff 0%, #ff2244 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      clip-path: polygon(65% 0, 100% 0, 100% 65%, 35% 65%, 0 100%, 0 35%, 35% 0);
+      filter: blur(4px);
+      opacity: 0.4;
+      animation: shatter-drift-reverse 5s ease-in-out infinite;
+    }
+  }
+
+  .btn-void {
+    @apply font-syne text-xs font-semibold bg-transparent border-2 border-void-dim text-void-muted py-4 px-8 cursor-pointer transition-all duration-300 relative overflow-hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #fafafa;
+      transform: translateY(100%);
+      transition: transform 0.3s;
+      z-index: -1;
+    }
+
+    &:hover::before {
+      transform: translateY(0);
+    }
+
+    &:hover {
+      @apply text-void-bg border-void-text;
+    }
+
+    &.btn-accept::before {
+      background: #ff2244;
+    }
+
+    &.btn-accept:hover {
+      @apply text-void-text border-void-accent;
+    }
+  }
+}
