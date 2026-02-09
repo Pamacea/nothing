@@ -14,7 +14,6 @@ const nextConfig: NextConfig = {
   compress: true,
 
   // Production optimizations
-  swcMinify: true,
   poweredByHeader: false,
 
   // Experimental features
