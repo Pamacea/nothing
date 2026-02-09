@@ -1,5 +1,11 @@
 # NOTHING
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub release](https://img.shields.io/github/v/release/Pamacea/nothing)](https://github.com/Pamacea/nothing/releases/latest)
+[![CI](https://github.com/Pamacea/nothing/actions/workflows/ci.yml/badge.svg)](https://github.com/Pamacea/nothing/actions)
+
+
+
 An interactive countdown experience website. Wait. Reveal. Accept.
 
 ## Overview
