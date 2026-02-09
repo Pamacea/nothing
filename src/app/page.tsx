@@ -90,7 +90,6 @@ export default function Home() {
             >
               <CountdownTimer
                 remainingSeconds={remainingTime}
-                totalSeconds={COUNTDOWN_DURATION}
                 tension={tension}
                 onComplete={handleCountdownComplete}
                 onSkip={handleSkip}

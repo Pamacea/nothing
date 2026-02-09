@@ -20,8 +20,8 @@ export function PhaseNothing({ onRestart, onAccept }: PhaseNothingProps) {
       </motion.h1>
 
       {[
-        'Il n&apos;y avait rien.',
-        'Il n&apos;y a jamais rien eu.',
+        "Il n'y avait rien.",
+        "Il n'y a jamais rien eu.",
       ].map((text, i) => (
         <motion.p
           key={i}
@@ -35,8 +35,8 @@ export function PhaseNothing({ onRestart, onAccept }: PhaseNothingProps) {
       ))}
 
       {[
-        'Vous avez attendu pour rien.',
-        'Comme d\'habitude.',
+        "Vous avez attendu pour rien.",
+        "Comme d'habitude.",
       ].map((text, i) => (
         <motion.p
           key={i}
@@ -62,16 +62,16 @@ export function PhaseNothing({ onRestart, onAccept }: PhaseNothingProps) {
           className="btn-void"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          aria-label="Recommencer l&apos;expérience depuis le début"
+          aria-label="Recommencer l'expérience depuis le début"
         >
-          Recommencer l&apos;attente
+          Recommencer l'attente
         </motion.button>
         <motion.button
           onClick={onAccept}
           className="btn-void btn-accept"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          aria-label="Accepter le vide et terminer l&apos;expérience"
+          aria-label="Accepter le vide et terminer l'expérience"
         >
           Accepter le vide
         </motion.button>

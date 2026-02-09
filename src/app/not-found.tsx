@@ -38,7 +38,7 @@ export default function NotFound() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          Il n&apos;y a rien ici non plus.
+          Il n'y a rien ici non plus.
         </motion.p>
 
         <motion.p
@@ -47,7 +47,7 @@ export default function NotFound() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          La page que vous cherchez n&apos;existe pas.
+          La page que vous cherchez n'existe pas.
         </motion.p>
 
         <motion.div

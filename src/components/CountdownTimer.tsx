@@ -12,13 +12,12 @@ interface TimeDisplay {
 
 interface CountdownTimerProps {
   remainingSeconds: number
-  totalSeconds: number
   tension: number
   onComplete: () => void
   onSkip: () => void
 }
 
-export function CountdownTimer({ remainingSeconds, totalSeconds, tension, onComplete, onSkip }: CountdownTimerProps) {
+export function CountdownTimer({ remainingSeconds, tension, onComplete, onSkip }: CountdownTimerProps) {
   const [mysteryIndex, setMysteryIndex] = useState(0)
   const [currentHint, setCurrentHint] = useState<HintText>(HINTS[0].text)
   const [shake, setShake] = useState(false)
@@ -129,7 +128,7 @@ export function CountdownTimer({ remainingSeconds, totalSeconds, tension, onComp
         whileTap={{ scale: 0.95 }}
         aria-label="Passer directement à la révélation"
       >
-        Je n&apos;ai pas le temps →
+        Je n'ai pas le temps →
       </motion.button>
 
       <motion.div

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import { Analytics } from "@vercel/analytics/next"
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://nothing.com'
 
@@ -113,6 +114,7 @@ export default function RootLayout({
         <div id="main-content" tabIndex={-1}>
           {children}
         </div>
+        <Analytics />
       </body>
     </html>
   )

@@ -48,7 +48,7 @@ export default function Error({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          Quelque chose s&apos;est mal passé
+          Quelque chose s'est mal passé
         </motion.h2>
 
         <motion.p
@@ -57,7 +57,7 @@ export default function Error({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          Même le vide a ses limites. Une erreur inattendue s&apos;est produite.
+          Même le vide a ses limites. Une erreur inattendue s'est produite.
         </motion.p>
 
         <motion.div
@@ -88,7 +88,7 @@ export default function Error({
             transition={{ delay: 0.9, duration: 0.6 }}
           >
             <summary className="cursor-pointer hover:text-void-muted">
-              Détails de l&apos;erreur
+              Détails de l'erreur
             </summary>
             <pre className="mt-2 whitespace-pre-wrap break-all">
               {error.message}
